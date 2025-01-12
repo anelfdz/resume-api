@@ -4,12 +4,12 @@ compatibility_date = "2025-01-12"
 
 # compatibility_flags = [ "nodejs_compat" ]
 
-# [vars]
-# MY_VAR = "my-variable"
+[vars]
+ALLOWED_ORIGINS="https://anelfdz.com,https://www.anelfdz.com"
 
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "RESUME_KV"
+id = "e4178d3bd77847b69aa7530fef54912e"
 
 # [[r2_buckets]]
 # binding = "MY_BUCKET"
