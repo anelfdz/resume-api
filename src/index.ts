@@ -4,11 +4,20 @@ import {ResumeData} from './ResumeData';
 
 const app = new Hono();
 
+// CORS Middleware
 app.use(
     '*',
     cors({
         origin: (origin, c) => {
-            return c.env.ALLOWED_ORIGINS?.split(',') || ["https://anelfdz.com", "https://www.anelfdz.com"];
+            const allowedOrigins = c.env.ALLOWED_ORIGINS
+                ? c.env.ALLOWED_ORIGINS.split(',')
+                : ['https://anelfdz.com', 'https://www.anelfdz.com'];
+
+            if (allowedOrigins.includes(origin)) {
+                return origin;
+            }
+
+            return 'https://anelfdz.com';
         },
         allowHeaders: ['Authorization', 'Content-Type'],
         allowMethods: ['GET', 'OPTIONS'],
