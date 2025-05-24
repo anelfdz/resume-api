@@ -11,6 +11,9 @@ ALLOWED_ORIGINS="https://anelfdz.com,https://www.anelfdz.com"
 binding = "RESUME_KV"
 id = "e4178d3bd77847b69aa7530fef54912e"
 
+[observability.logs]
+enabled = true
+
 # [[r2_buckets]]
 # binding = "MY_BUCKET"
 # bucket_name = "my-bucket"
