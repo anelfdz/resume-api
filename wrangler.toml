@@ -5,7 +5,7 @@ compatibility_date = "2025-01-12"
 # compatibility_flags = [ "nodejs_compat" ]
 
 [vars]
-ALLOWED_ORIGINS="https://anelfdz.com,https://www.anelfdz.com"
+ALLOWED_ORIGINS="https://anelfdz.com,https://www.anelfdz.com,https://resume.anelfdz.com,https://resume-frontend-zj1.pages.dev"
 
 [[kv_namespaces]]
 binding = "RESUME_KV"

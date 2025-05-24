@@ -11,13 +11,15 @@ app.use(
         origin: (origin, c) => {
             const allowedOrigins = c.env.ALLOWED_ORIGINS
                 ? c.env.ALLOWED_ORIGINS.split(',')
-                : ['https://anelfdz.com', 'https://www.anelfdz.com'];
+                : [
+                    'https://anelfdz.com',
+                    'https://www.anelfdz.com',
+                    'https://resume.anelfdz.com',
+                    'https://resume-frontend-zj1.pages.dev'
+                ];
 
-            if (allowedOrigins.includes(origin)) {
-                return origin;
-            }
-
-            return 'https://anelfdz.com';
+            // Only return the origin if it's allowed, otherwise return empty string
+            return allowedOrigins.includes(origin) ? origin : '';
         },
         allowHeaders: ['Authorization', 'Content-Type'],
         allowMethods: ['GET', 'OPTIONS'],
